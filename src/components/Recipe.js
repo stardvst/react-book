@@ -1,5 +1,6 @@
 import Instructions from './Instructions';
 import Ingredient from './Ingredient';
+import StarRating from './StarRating';
 
 const Recipe = ({ name, ingredients, steps }) => {
   return (
@@ -7,10 +8,11 @@ const Recipe = ({ name, ingredients, steps }) => {
       <h1>{name}</h1>
       <ul className="ingredients">
         {ingredients.map((ingredient, i) => (
-          <Ingredient {...ingredient} />
+          <Ingredient key={i} {...ingredient} />
         ))}
       </ul>
       <Instructions title={'Cooking Instructions'} steps={steps} />
+      <StarRating style={{ backgroundColor: 'lightblue' }} />
     </section>
   );
 };
