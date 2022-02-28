@@ -1,6 +1,8 @@
 [
   {
+    "id": "1",
     "name": "Baked Salmon",
+    "rating": 4,
     "ingredients": [
       { "name": "Salmon", "amount": 1, "measurement": "lb" },
       { "name": "Pine Nuts", "amount": 1, "measurement": "cup" },
@@ -19,7 +21,9 @@
     ]
   },
   {
+    "id": "2",
     "name": "Fish Tacos",
+    "rating": 4,
     "ingredients": [
       { "name": "Whitefish", "amount": 1, "measurement": "lb" },
       { "name": "Cheese", "amount": 1, "measurement": "cup" },

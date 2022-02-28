@@ -1,8 +1,9 @@
+import { FaTrash } from 'react-icons/fa';
 import Instructions from './Instructions';
 import Ingredient from './Ingredient';
 import StarRating from './StarRating';
 
-const Recipe = ({ name, ingredients, steps }) => {
+const Recipe = ({ id, name, ingredients, steps, rating, onRemove, onRate }) => {
   return (
     <section id="baked-salmon">
       <h1>{name}</h1>
@@ -12,7 +13,14 @@ const Recipe = ({ name, ingredients, steps }) => {
         ))}
       </ul>
       <Instructions title={'Cooking Instructions'} steps={steps} />
-      <StarRating style={{ backgroundColor: 'lightblue' }} />
+      <StarRating
+        style={{ backgroundColor: 'lightblue' }}
+        selectedStars={rating}
+        onRate={rating => onRate(id, rating)}
+      />
+      <button onClick={() => onRemove(id)}>
+        <FaTrash />
+      </button>
     </section>
   );
 };

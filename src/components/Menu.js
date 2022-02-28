@@ -1,6 +1,6 @@
 import Recipe from './Recipe';
 
-const Menu = ({ recipes }) => {
+const Menu = ({ recipes, onRemoveRecipe, onRateRecipe }) => {
   return (
     <article>
       <header>
@@ -8,7 +8,7 @@ const Menu = ({ recipes }) => {
       </header>
       <div className="recipes">
         {recipes.map((recipe, i) => (
-          <Recipe key={i} {...recipe} />
+          <Recipe key={i} {...recipe} onRemove={onRemoveRecipe} onRate={onRateRecipe} />
         ))}
       </div>
     </article>
