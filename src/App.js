@@ -8,7 +8,6 @@ const App = () => {
   return (
     <>
       <Menu
-        recipes={recipes}
         onRemoveRecipe={id => {
           const newRecipes = recipes.filter(recipe => recipe.id !== id);
           setRecipes(newRecipes);

@@ -1,6 +1,14 @@
+import { useContext } from 'react';
 import Recipe from './Recipe';
+import { ColorContext } from './../index';
 
-const Menu = ({ recipes, onRemoveRecipe, onRateRecipe }) => {
+const Menu = ({ onRemoveRecipe, onRateRecipe }) => {
+  const { recipes } = useContext(ColorContext);
+
+  if (!recipes.length) {
+    return <div>No recipes listed.</div>;
+  }
+
   return (
     <article>
       <header>
