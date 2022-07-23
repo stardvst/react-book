@@ -1,5 +1,5 @@
 // import { useRef } from 'react';
-import { useState } from 'react';
+import { useInput } from '../hooks/useInput';
 
 const AddRecipeForm = ({ onNewRecipe }) => {
   // const titleRef = useRef();
@@ -14,14 +14,14 @@ const AddRecipeForm = ({ onNewRecipe }) => {
   //   ratingRef.current.value = '';
   // };
 
-  const [title, setTitle] = useState('');
-  const [rating, setRating] = useState(5);
+  const [titleProps, resetTitle] = useInput('');
+  const [ratingProps, resetRating] = useInput(5);
 
   const submit = e => {
     e.preventDefault();
-    onNewRecipe(title, rating);
-    setTitle('');
-    setRating(5);
+    onNewRecipe(titleProps.value, ratingProps.value);
+    resetTitle();
+    resetRating();
   };
 
   return (
@@ -29,18 +29,12 @@ const AddRecipeForm = ({ onNewRecipe }) => {
       <div>
         <label>Recipe title:</label>
         {/* <input ref={titleRef} type="text" placeholder="Recipe title..." required /> */}
-        <input
-          value={title}
-          onChange={e => setTitle(e.target.value)}
-          type="text"
-          placeholder="Recipe title..."
-          required
-        />
+        <input {...titleProps} type="text" placeholder="Recipe title..." required />
       </div>
       <div>
         <label>Recipe rating:</label>
         {/* <input ref={ratingRef} type="number" min={1} max={5} value={3} required /> */}
-        <input value={rating} onChange={e => setRating(e.target.value)} type="number" min={1} max={5} required />
+        <input {...ratingProps} type="number" min={1} max={5} required />
       </div>
       <button type="submit">Add</button>
     </form>
