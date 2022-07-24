@@ -1,16 +1,13 @@
 import React from 'react';
-import { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import recipes from './data/recipes.json';
-
-export const ColorContext = createContext();
+import RecipeProvider from './providers/RecipeProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ColorContext.Provider value={{ recipes }}>
+    <RecipeProvider>
       <App />
-    </ColorContext.Provider>
+    </RecipeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

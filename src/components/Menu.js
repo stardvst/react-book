@@ -1,9 +1,8 @@
-import { useContext } from 'react';
 import Recipe from './Recipe';
-import { ColorContext } from './../index';
+import { useRecipes } from '../providers/RecipeProvider';
 
-const Menu = ({ onRemoveRecipe, onRateRecipe }) => {
-  const { recipes } = useContext(ColorContext);
+const Menu = () => {
+  const { recipes, removeRecipe, rateRecipe } = useRecipes();
 
   if (!recipes.length) {
     return <div>No recipes listed.</div>;
@@ -16,7 +15,7 @@ const Menu = ({ onRemoveRecipe, onRateRecipe }) => {
       </header>
       <div className="recipes">
         {recipes.map((recipe, i) => (
-          <Recipe key={i} {...recipe} onRemove={onRemoveRecipe} onRate={onRateRecipe} />
+          <Recipe key={i} {...recipe} onRemove={removeRecipe} onRate={rateRecipe} />
         ))}
       </div>
     </article>

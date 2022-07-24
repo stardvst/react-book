@@ -1,7 +1,8 @@
 // import { useRef } from 'react';
 import { useInput } from '../hooks/useInput';
+import { useRecipes } from '../providers/RecipeProvider';
 
-const AddRecipeForm = ({ onNewRecipe }) => {
+const AddRecipeForm = () => {
   // const titleRef = useRef();
   // const ratingRef = useRef();
 
@@ -16,10 +17,11 @@ const AddRecipeForm = ({ onNewRecipe }) => {
 
   const [titleProps, resetTitle] = useInput('');
   const [ratingProps, resetRating] = useInput(5);
+  const { addRecipe } = useRecipes();
 
   const submit = e => {
     e.preventDefault();
-    onNewRecipe(titleProps.value, ratingProps.value);
+    addRecipe(titleProps.value, ratingProps.value);
     resetTitle();
     resetRating();
   };
