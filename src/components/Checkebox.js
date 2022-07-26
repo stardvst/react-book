@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 const Checkebox = () => {
   const [checked, setChecked] = useState(false);
 
-  useEffect(() => alert(`checked: ${checked}`));
+  //useEffect(() => alert(`checked: ${checked}`));
 
   return (
     <>

@@ -1,5 +1,6 @@
 import Recipe from './Recipe';
 import { useRecipes } from '../providers/RecipeProvider';
+import FavoriteRecipe from './FavoriteRecipe';
 
 const Menu = () => {
   const { recipes, removeRecipe, rateRecipe } = useRecipes();
@@ -10,6 +11,7 @@ const Menu = () => {
 
   return (
     <article>
+      <FavoriteRecipe />
       <header>
         <h1>Delicious Recipes</h1>
       </header>
