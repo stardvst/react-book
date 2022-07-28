@@ -1,8 +1,9 @@
 import React from 'react';
+import { useMemo } from 'react';
 import { useEffect } from 'react';
 
 const WordCount = ({ children }) => {
-  const words = children.split(' ');
+  const words = useMemo(() => children.split(' '), [children]);
   useEffect(() => {
     console.log(`attention!!! rendering ${words.length} words`);
   }, [words]);
