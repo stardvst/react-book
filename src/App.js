@@ -5,6 +5,7 @@ import useAnyKeyToRender from './hooks/useAnyKeyToRender';
 import WordCount from './components/WordCount';
 import { useCallback } from 'react';
 import useWindowSize from './hooks/useWindowSize';
+import CatShelter from './components/CatShelter';
 
 const App = () => {
   useAnyKeyToRender();
@@ -27,6 +28,7 @@ const App = () => {
       <WordCount>This is really really weird...</WordCount>
       <Menu />
       <AddRecipeForm />
+      <CatShelter />
     </>
   );
 };

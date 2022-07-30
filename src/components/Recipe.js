@@ -3,8 +3,10 @@ import Instructions from './Instructions';
 import Ingredient from './Ingredient';
 import StarRating from './StarRating';
 import Checkebox from './Checkebox';
+import { memo } from 'react';
 
-const Recipe = ({ id, name, ingredients, steps, rating, onRemove, onRate }) => {
+const Recipe = memo(({ id, name, ingredients, steps, rating, onRemove, onRate }) => {
+  console.log('recipe:', id, name);
   return (
     <section id="baked-salmon">
       <Checkebox />
@@ -25,6 +27,6 @@ const Recipe = ({ id, name, ingredients, steps, rating, onRemove, onRate }) => {
       </button>
     </section>
   );
-};
+});
 
 export default Recipe;
