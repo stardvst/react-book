@@ -7,7 +7,7 @@ const CatShelter = () => {
     <div>
       <div>
         {cats.map((cat, idx) => (
-          <Cat key={idx} name={cat} />
+          <Cat key={idx} name={cat} meow={name => console.log(`${name} meowed`)} />
         ))}
       </div>
       <button onClick={() => setCats(cats => [...cats, prompt('Name the cat <3')])}>Add a cat</button>

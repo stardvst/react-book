@@ -5,6 +5,13 @@ import StarRating from './StarRating';
 import Checkebox from './Checkebox';
 import { memo } from 'react';
 
+const isSameRecipe = (prevProps, nextProps) =>
+  prevProps.id === nextProps.id &&
+  prevProps.name === nextProps.name &&
+  prevProps.ingredients === nextProps.ingredients &&
+  prevProps.steps === nextProps.steps &&
+  prevProps.rating === nextProps.rating;
+
 const Recipe = memo(({ id, name, ingredients, steps, rating, onRemove, onRate }) => {
   console.log('recipe:', id, name);
   return (
@@ -27,6 +34,6 @@ const Recipe = memo(({ id, name, ingredients, steps, rating, onRemove, onRate })
       </button>
     </section>
   );
-});
+}, isSameRecipe);
 
 export default Recipe;

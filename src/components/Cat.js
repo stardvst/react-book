@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 
-const Cat = ({ name }) => {
+const Cat = ({ name, meow }) => {
   console.log(`rendering ${name}`);
-  return <p>{name}</p>;
+  return <p onClick={() => meow(name)}>{name}</p>;
 };
 
-export default memo(Cat);
+export default memo(Cat, (prevProps, nextProps) => prevProps.name === nextProps.name);
