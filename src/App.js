@@ -6,6 +6,7 @@ import WordCount from './components/WordCount';
 import { useCallback } from 'react';
 import useWindowSize from './hooks/useWindowSize';
 import CatShelter from './components/CatShelter';
+import GithubUser from './components/GithubUser';
 
 const App = () => {
   useAnyKeyToRender();
@@ -25,6 +26,7 @@ const App = () => {
 
   return (
     <>
+      <GithubUser login={'stardvst'} />
       <WordCount>This is really really weird...</WordCount>
       <Menu />
       <AddRecipeForm />
