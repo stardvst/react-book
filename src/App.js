@@ -7,6 +7,7 @@ import { useCallback } from 'react';
 import useWindowSize from './hooks/useWindowSize';
 import CatShelter from './components/CatShelter';
 import GithubUser from './components/GithubUser';
+import TahoePeaks from './components/TahoePeaks';
 
 const App = () => {
   useAnyKeyToRender();
@@ -31,6 +32,7 @@ const App = () => {
       <Menu />
       <AddRecipeForm />
       <CatShelter />
+      <TahoePeaks />
     </>
   );
 };
