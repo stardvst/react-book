@@ -8,7 +8,8 @@ import useWindowSize from './hooks/useWindowSize';
 import CatShelter from './components/CatShelter';
 import GithubUser from './components/GithubUser';
 import TahoePeaks from './components/TahoePeaks';
-import SimpleBigList from './SimpleBigList';
+// import SimpleBigList from './components/SimpleBigList';
+import VirtualizedBigList from './components/VirtualizedBigList';
 
 const App = () => {
   useAnyKeyToRender();
@@ -34,7 +35,8 @@ const App = () => {
       <AddRecipeForm />
       <CatShelter />
       <TahoePeaks />
-      <SimpleBigList />
+      {/* <SimpleBigList /> */}
+      <VirtualizedBigList />
     </>
   );
 };

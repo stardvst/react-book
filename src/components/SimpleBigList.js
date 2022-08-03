@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import List from './components/List';
+import List from './List';
 
 const bigList = [...Array(5000)].map(() => ({
   name: faker.name.findName(),
