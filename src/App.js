@@ -10,6 +10,8 @@ import GithubUser from './components/GithubUser';
 import TahoePeaks from './components/TahoePeaks';
 // import SimpleBigList from './components/SimpleBigList';
 import VirtualizedBigList from './components/VirtualizedBigList';
+import { useState } from 'react';
+import SearchForm from './components/SearchForm';
 
 const App = () => {
   useAnyKeyToRender();
@@ -27,9 +29,12 @@ const App = () => {
 
   useLayoutEffect(() => console.log('layout render'));
 
+  const [login, setLogin] = useState('stardvst');
+
   return (
     <>
-      <GithubUser login={'stardvst'} />
+      <SearchForm value={login} onSearch={setLogin} />
+      <GithubUser login={login} />
       <WordCount>This is really really weird...</WordCount>
       <Menu />
       <AddRecipeForm />
