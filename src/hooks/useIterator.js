@@ -6,12 +6,12 @@ const useIterator = ({ items = [], initialIndex = 0 }) => {
 
   const previous = useCallback(() => {
     if (index === 0) setIndex(items.length - 1);
-    setIndex(index - 1);
+    else setIndex(index - 1);
   }, [index, items]);
 
   const next = useCallback(() => {
     if (index === items.length - 1) setIndex(0);
-    setIndex(index + 1);
+    else setIndex(index + 1);
   }, [index, items]);
 
   const item = useMemo(() => items[index], [index, items]);

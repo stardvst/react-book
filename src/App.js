@@ -6,12 +6,12 @@ import WordCount from './components/WordCount';
 import { useCallback } from 'react';
 import useWindowSize from './hooks/useWindowSize';
 import CatShelter from './components/CatShelter';
-import GithubUser from './components/GithubUser';
+import GithubUser from './components/github/GithubUser';
 import TahoePeaks from './components/TahoePeaks';
 // import SimpleBigList from './components/SimpleBigList';
 import VirtualizedBigList from './components/VirtualizedBigList';
 import { useState } from 'react';
-import SearchForm from './components/SearchForm';
+import SearchForm from './components/github/SearchForm';
 
 const App = () => {
   useAnyKeyToRender();
