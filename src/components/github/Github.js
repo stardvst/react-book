@@ -11,9 +11,9 @@ const Github = () => {
   return (
     <div>
       <SearchForm value={login} onSearch={setLogin} />
-      <GithubUser login={login} />
-      <UserRepos login={login} onSelect={setRepo} />
-      <RepoReadme login={login} repo={repo} />
+      {login && <GithubUser login={login} />}
+      {login && <UserRepos login={login} onSelect={setRepo} />}
+      {login && repo && <RepoReadme login={login} repo={repo} />}
     </div>
   );
 };
