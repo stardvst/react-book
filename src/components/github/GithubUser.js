@@ -1,5 +1,4 @@
 import Fetch from '../Fetch';
-import UserRepos from './UserRepos';
 
 const UserDetails = data => (
   <div>
@@ -9,7 +8,6 @@ const UserDetails = data => (
       {data.name && <p>{data.name}</p>}
       {data.location && <p>{data.location}</p>}
     </div>
-    <UserRepos login={data.login} onSelect={repoName => console.log(`${repoName} is selected.`)} />
   </div>
 );
 

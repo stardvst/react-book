@@ -6,12 +6,10 @@ import WordCount from './components/WordCount';
 import { useCallback } from 'react';
 import useWindowSize from './hooks/useWindowSize';
 import CatShelter from './components/CatShelter';
-import GithubUser from './components/github/GithubUser';
 import TahoePeaks from './components/TahoePeaks';
 // import SimpleBigList from './components/SimpleBigList';
 import VirtualizedBigList from './components/VirtualizedBigList';
-import { useState } from 'react';
-import SearchForm from './components/github/SearchForm';
+import Github from './components/github/Github';
 
 const App = () => {
   useAnyKeyToRender();
@@ -29,12 +27,9 @@ const App = () => {
 
   useLayoutEffect(() => console.log('layout render'));
 
-  const [login, setLogin] = useState('stardvst');
-
   return (
     <>
-      <SearchForm value={login} onSearch={setLogin} />
-      <GithubUser login={login} />
+      <Github />
       <WordCount>This is really really weird...</WordCount>
       <Menu />
       <AddRecipeForm />
