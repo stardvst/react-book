@@ -8,9 +8,22 @@ const Github = () => {
   const [login, setLogin] = useState('stardvst');
   const [repo, setRepo] = useState('');
 
+  const handleSearch = login => {
+    if (login) {
+      setLogin(login);
+    } else {
+      setLogin('');
+      setRepo('');
+    }
+  };
+
+  if (!login) {
+    return <SearchForm onSearch={handleSearch} />;
+  }
+
   return (
     <div>
-      <SearchForm value={login} onSearch={setLogin} />
+      <SearchForm value={login} onSearch={handleSearch} />
       {login && <GithubUser login={login} />}
       {login && <UserRepos login={login} onSelect={setRepo} />}
       {login && repo && <RepoReadme login={login} repo={repo} />}
