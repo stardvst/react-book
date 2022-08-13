@@ -10,6 +10,7 @@ import TahoePeaks from './components/TahoePeaks';
 // import SimpleBigList from './components/SimpleBigList';
 import VirtualizedBigList from './components/VirtualizedBigList';
 import Github from './components/github/Github';
+import SiteLayout, { BreakThings, Callout } from './components/error_boundary/SiteLayout';
 
 const App = () => {
   useAnyKeyToRender();
@@ -29,6 +30,21 @@ const App = () => {
 
   return (
     <>
+      <SiteLayout
+        menu={
+          <>
+            <p>Menu</p>
+            <BreakThings />
+          </>
+        }
+      >
+        <>
+          <Callout>Callout</Callout>
+          <h1>Contents</h1>
+          <p>This is the main part of the example layout</p>
+        </>
+      </SiteLayout>
+
       <Github />
       <WordCount>This is really really weird...</WordCount>
       <Menu />
