@@ -4,7 +4,8 @@ import './styles.css';
 export default class ErrorBoundary extends Component {
   state = { error: null };
 
-  static getDerivedStateFromProps(error) {
+  static getDerivedStateFromError(error) {
+    console.log(error)
     return { error };
   }
 
