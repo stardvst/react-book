@@ -15,4 +15,8 @@ export const BreakThings = ({ children }) => {
   throw new Error('we interntionally broke something.');
 };
 
+export const WaitThings = ({ children }) => {
+  throw new Promise(resolves => null);
+};
+
 export default SiteLayout;
